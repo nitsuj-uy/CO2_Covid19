@@ -7,11 +7,6 @@ import plotly.graph_objects as go
 from dash import Dash, dcc, html, Input, Output
 import dash_bootstrap_components as dbc
 
-app = dash.Dash(
-    'Graphs',
-    external_stylesheets = [dbc.themes.BOOTSTRAP]
-)
-
 # -------------------------------------------------------------
 # Import and clean data 
 
@@ -182,23 +177,6 @@ aviate = dcc.Graph(
     figure = fig_aviate
 )
 
-
-# page_content2 = dbc.Row(
-#     children = [
-
-#         dbc.Col(
-#             power,
-#             lg = 6
-#         ),
-
-#         dbc.Col(
-#             ground,
-#             lg = 6
-#         )
-#     ]
-# )
-
-#app.layout = html.Div(
 layout = html.Div(
     children = [
 
@@ -253,52 +231,8 @@ layout = html.Div(
                 aviate
             )
         )
-        # page_content2,
-        # page_content2
     ]
 )
-# ---------------------------------------------------------------
-# App Layout
-
-# app.layout = html.Div([
-#     html.H1('Carbom Emissions', style = {'text-align': 'center'}),
-
-#     dcc.Dropdown(
-#         id = 'slct_sectors',
-#         options = [
-#             {'lable': 'Total', 'value': 'totalco2'},
-#             {'lable': 'Power', 'value': 'power'},
-#             {'lable': 'Ground Transportation', 'value': 'groundtrans'},
-#             {'lable': 'Industry', 'value': 'industry'},
-#             {'lable': 'Residential', 'value': 'residential'},
-#             {'lable': 'Domestic Aviation', 'value': 'domaviate'}
-#         ],
-#         value = 'totalco2',
-#         style = {'width': '40%'}
-#     ),
-
-#     html.Div(id = 'output_container', children = []),
-#     html.Br(),
-
-#     dcc.Graph(id = 'my_graphs', figure = {})
-# ])
-
-# #Connect graphs to Dash Components
-
-# @app.callback(
-#     [Output(component_id = 'output_container', component_property = 'children'),
-#      Output(component_id = 'my_graphs', component_property = 'figure')],
-#     [Input(component_id = 'slct_sectors', component_property = 'value')]
-# )
-# def update_graph(option_slctd):
-
-#     container = "The option selected was : {}".format(option_slctd)
-#     fig = go.Figure()
-#     #fig = px.line(data_frame = sectors_2019, x = sectors_2019.day_month, y = option_slctd)
-#     fig.add_scatter(x = sectors_2019['day_month'], y = sectors_2019[option_slctd], name = '2019')
-#     fig.add_scatter(x = sectors_2020['day_month'], y = sectors_2020[option_slctd], name = '2020')
-
-#     return container, fig
 
 if __name__ == '__main__':
-    app.run_server(debug = True)
+    print('graphs layout.')

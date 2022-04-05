@@ -3,12 +3,13 @@ from dash.dependencies import Input, Output, State
 import dash_bootstrap_components as dbc
 
 from app import app 
-from apps import home, graphs
+from apps import home, graphs, insight
 
 dropdown = dbc.DropdownMenu(
     children = [
         dbc.DropdownMenuItem('Home', href = '/home'),
-        dbc.DropdownMenuItem('Grahps', href = '/graphs')
+        dbc.DropdownMenuItem('Grahps', href = '/graphs'),
+        dbc.DropdownMenuItem('Insights', href = '/insight')
     ],
     nav = True,
     in_navbar = True,
@@ -51,6 +52,8 @@ navbar = dbc.Navbar(
 def display_page(pathname)              :
     if pathname == '/graphs':
         return graphs.layout
+    elif pathname == '/insight':
+        return insight.layout
     else:
         return home.layout
 

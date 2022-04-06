@@ -5,11 +5,11 @@ import dash_bootstrap_components as dbc
 layout = html.Div([
     dbc.Container([
         dbc.Row([
-            dbc.Col(html.H1("COVID-19 and CO2 Emissions Dashboard", className="text-center"), 
+            dbc.Col(html.H1("COVID-19's Effect on CO2 Emissions Dashboard", className="text-center"), 
                     className="mb-5 mt-5")
         ]),
         dbc.Row([
-            dbc.Col(html.H5(children='The aim of this app is to learn how to use Dash and Bootstrap.'), 
+            dbc.Col(html.H5(children='The goal of this app is to demonstrate the effect of the Covid-19 pandemic on CO2 emissions in China.'), 
                     className="mb-4")
             ]),
 
